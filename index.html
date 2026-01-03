@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐍 贪吃蛇游戏</h1>
+        </header>
+        
+        <div class="game-container">
+            <div class="score-board">
+                <div class="score-item">
+                    <span class="label">当前分数:</span>
+                    <span class="value" id="current-score">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">最高分:</span>
+                    <span class="value" id="high-score">0</span>
+                </div>
+                <div class="status-item">
+                    <span class="label">状态:</span>
+                    <span class="value" id="game-status">准备开始</span>
+                </div>
+            </div>
+            
+            <div class="canvas-wrapper">
+                <canvas id="gameCanvas"></canvas>
+                <div class="game-over-overlay" id="gameOverOverlay">
+                    <div class="game-over-content">
+                        <h2>游戏结束!</h2>
+                        <p>你的得分: <span id="final-score">0</span></p>
+                        <button class="btn btn-primary" id="restartBtn">重新开始</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <button class="btn btn-primary" id="startBtn">开始游戏</button>
+                    <button class="btn btn-secondary" id="pauseBtn" disabled>暂停</button>
+                    <button class="btn btn-secondary" id="resetBtn">重置</button>
+                </div>
+                
+                <div class="difficulty-group">
+                    <label for="difficulty">难度:</label>
+                    <select id="difficulty">
+                        <option value="easy">简单 (慢速)</option>
+                        <option value="medium" selected>中等 (正常)</option>
+                        <option value="hard">困难 (快速)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <h3>游戏说明</h3>
+                <ul>
+                    <li>使用 <kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd> 方向键或 <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> 控制蛇的移动</li>
+                    <li>吃到食物 🍎 可以增长并获得分数</li>
+                    <li>避免撞到墙壁或自己的身体</li>
+                    <li>按空格键可以暂停/继续游戏</li>
+                </ul>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2024 贪吃蛇游戏 - 祝你玩得开心！</p>
+        </footer>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
